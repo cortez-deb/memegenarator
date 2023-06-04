@@ -1,11 +1,20 @@
 import React from "react";
 import image from "../logo.svg";
+import memeData from '../components/memData'
 function Section() {
   let budge
-  function handleclick() {
-      alert("2345678")
+function memesdata(){
+  const memeArray =memeData.data.memes
+  const randomNumber= Math.floor(Math.random() * memeArray.length)
+  const arry = memeArray[randomNumber]
+  return arry
+}
+  function mapping(){
+    memeData.data.memes.map((item)=>{
+    console.log(item.url)
+  })  
   }
-  return (
+  return ( 
     <main>
 
       <div className="row g-3 m-2">
@@ -27,7 +36,7 @@ function Section() {
             />
           </div>
           <div className="col-12 mt-2">
-          <button className="btn col-12" onClick={handleclick} style={{background:"#672280"}}>Get a new meme image 🖼</button>
+          <button className="btn col-12" onClick={mapping} style={{background:"#672280"}}>Get a new meme image 🖼</button>
           </div>
         </div>
       </div>
